@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+  nginx-1:
+    image: test-nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./html1/default.conf:/etc/nginx/http.d/default.conf
+      - ./html1:/usr/share/nginx/html
+      - ./log1:/var/log/nginx/
+  nginx-2:
+    image: test-nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./html2/default.conf:/etc/nginx/http.d/default.conf
+      - ./html2:/usr/share/nginx/html
+      - ./log2:/var/log/nginx/
+  nginx-3:
+    image: test-nginx:latest
+    ports:
+      - "8081:80"
+    volumes:
+      - ./html3/default.conf:/etc/nginx/http.d/default.conf
+      - ./html3:/usr/share/nginx/html
+      - ./log3:/var/log/nginx/
