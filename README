@@ -46,8 +46,8 @@ https://github.com/bitnami/charts/tree/main/bitnami/postgresql-ha
 
 Как результат 
 
-![Alt text](image.png)
+![Alt text](image-2.png)
 
 Можно увидеть, что постгрес работает (только не проходит аутентификация)
 
-![Alt text](image-1.png)
+![Alt text](image-3.png)
