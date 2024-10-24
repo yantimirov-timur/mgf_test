@@ -23,6 +23,19 @@ spec:
         volumeMounts:
           - name: jenkins-vol
             mountPath: /var/jenkins_vol
+          - name: docker-socket
+            mountPath: /var/run/docker.sock
+          - name: docker-binary
+            mountPath: /usr/bin/docker
+        securityContext:
+            runAsUser: 0 
+            privileged: true
       volumes:
         - name: jenkins-vol
           emptyDir: {}
+        - name: docker-socket
+          hostPath:
+            path: /var/run/docker.sock
+        - name: docker-binary
+          hostPath:
+            path: /usr/bin/docker
